@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 140" width="450" height="140">
+  <g fill="none" fill-rule="evenodd">
+    <!-- Monogram PC -->
+    <g transform="translate(10, 10)">
+      <!-- Outer C curve -->
+      <path d="M 65,15 C 30,15 10,40 10,70 C 10,100 30,125 65,125 C 85,125 95,115 100,105 L 90,95 C 85,103 77,110 65,110 C 42,110 25,92 25,70 C 25,48 42,30 65,30 C 77,30 85,37 90,45 L 100,35 C 95,25 85,15 65,15 Z" fill="#2563eb"/>
+      
+      <!-- Vertical Stem P -->
+      <rect x="42" y="10" width="14" height="120" rx="2" fill="#1d4ed8"/>
+      <rect x="46" y="10" width="6" height="120" fill="#ffffff" opacity="0.3"/>
+      
+      <!-- P Top Loop -->
+      <path d="M 52,12 C 75,12 95,25 95,45 C 95,65 75,78 52,78 L 52,64 C 68,64 80,55 80,45 C 80,35 68,26 52,26 Z" fill="#2563eb"/>
+      
+      <!-- C Inner accent line -->
+      <path d="M 52,90 C 75,90 98,100 105,112 L 95,120 C 90,110 72,102 52,102 Z" fill="#1d4ed8"/>
+    </g>
+    
+    <!-- Text: PLINIO CAVALCANTI -->
+    <text x="125" y="66" font-family="'Inter', 'Roboto', 'Arial Black', sans-serif" font-weight="900" font-size="34" letter-spacing="0.5" fill="#1e3a8a">
+      PLINIO CAVALCANTI
+    </text>
+
+    <!-- Subtitle: ENGENHARIA E CONSTRUÇÕES -->
+    <text x="130" y="102" font-family="'Inter', 'Roboto', sans-serif" font-weight="700" font-size="20" letter-spacing="2" fill="#3b82f6">
+      ENGENHARIA E CONSTRUÇÕES
+    </text>
+  </g>
+</svg>

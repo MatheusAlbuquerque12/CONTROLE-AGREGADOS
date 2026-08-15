@@ -1,5 +1,5 @@
 import React from 'react';
-import { HardHat, Shield, Building2, MapPin, Target, UserCheck } from 'lucide-react';
+import { HardHat, Shield, Building2, MapPin, Target } from 'lucide-react';
 import { formatNumberBR } from '../utils/formatters';
 
 interface HeaderProps {
@@ -10,33 +10,46 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ currentRole, onRoleChange, metaCBUQ, producaoRealizada }) => {
-  const percentAvanco = metaCBUQ > 0 ? (producaoRealizada / metaCBUQ) * 100 : 0;
-
   return (
     <header className="bg-asphalt-900 border-b border-asphalt-800 text-asphalt-100 px-6 py-4 shadow-xl">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
         
-        {/* Lado Esquerdo: Identificação Corporativa e Obra */}
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-safety-amber to-amber-600 flex items-center justify-center text-asphalt-950 shadow-lg shadow-amber-500/20 font-extrabold">
-            <HardHat className="w-7 h-7 stroke-[2.2]" />
+        {/* Lado Esquerdo: Logotipo Oficial da Plínio Cavalcanti + Identificação da Obra */}
+        <div className="flex items-center gap-5">
+          
+          {/* LOGO OFICIAL DA EMPRESA (imagem enviada pelo usuário) */}
+          <div className="bg-white p-2.5 rounded-xl shadow-lg border border-asphalt-700 flex items-center justify-center h-14 shrink-0 transition-transform hover:scale-[1.02]">
+            <img
+              src="/logo-plinio-cavalcanti.svg"
+              alt="Plínio Cavalcanti Engenharia e Construções"
+              className="h-10 w-auto object-contain"
+              onError={(e) => {
+                // Fallback se a imagem não carregar
+                (e.target as HTMLElement).style.display = 'none';
+              }}
+            />
           </div>
+
+          <div className="h-10 w-px bg-asphalt-800 hidden sm:block"></div>
+
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xs font-mono uppercase tracking-widest px-2 py-0.5 rounded bg-asphalt-800 text-safety-amber font-semibold border border-asphalt-700">
-                Construtora Plínio Cavalcanti LTDA
+              <span className="text-[11px] font-mono uppercase tracking-widest px-2.5 py-0.5 rounded bg-amber-500/10 text-safety-amber font-bold border border-amber-500/30">
+                CONSTRUTORA PLÍNIO CAVALCANTI LTDA
               </span>
               <span className="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded font-mono font-medium flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                 Obra Ativa
               </span>
             </div>
-            <h1 className="text-xl font-bold tracking-tight text-white flex items-center gap-2 mt-0.5">
+            
+            <h1 className="text-xl font-bold tracking-tight text-white flex items-center gap-2 mt-1 font-mono">
               <span>OBRA 177/25</span>
               <span className="text-asphalt-500 font-normal">|</span>
               <span className="text-asphalt-200">CONTROLE E GESTÃO DE AGREGADOS CBUQ</span>
             </h1>
-            <div className="flex items-center gap-4 text-xs text-asphalt-400 mt-1">
+
+            <div className="flex flex-wrap items-center gap-4 text-xs text-asphalt-400 mt-1 font-sans">
               <span className="flex items-center gap-1">
                 <MapPin className="w-3.5 h-3.5 text-safety-amber" />
                 BR-423/PE — Trecho Lajedo-PE → Garanhuns-PE
@@ -47,6 +60,7 @@ export const Header: React.FC<HeaderProps> = ({ currentRole, onRoleChange, metaC
               </span>
             </div>
           </div>
+
         </div>
 
         {/* Lado Direito: Meta, Progresso & Perfil de Usuário */}
