@@ -17,15 +17,14 @@ export const Header: React.FC<HeaderProps> = ({ currentRole, onRoleChange, metaC
         {/* Lado Esquerdo: Logotipo Oficial da Plínio Cavalcanti + Identificação da Obra */}
         <div className="flex items-center gap-5">
           
-          {/* LOGO OFICIAL DA EMPRESA (imagem enviada pelo usuário) */}
+          {/* LOGO OFICIAL DA EMPRESA (imagem LOGO.jpg enviada no projeto) */}
           <div className="bg-white p-2.5 rounded-xl shadow-lg border border-asphalt-700 flex items-center justify-center h-14 shrink-0 transition-transform hover:scale-[1.02]">
             <img
-              src="/logo-plinio-cavalcanti.svg"
+              src="/logo-plinio-cavalcanti.jpg"
               alt="Plínio Cavalcanti Engenharia e Construções"
               className="h-10 w-auto object-contain"
               onError={(e) => {
-                // Fallback se a imagem não carregar
-                (e.target as HTMLElement).style.display = 'none';
+                (e.target as HTMLImageElement).src = '/LOGO.jpg';
               }}
             />
           </div>
